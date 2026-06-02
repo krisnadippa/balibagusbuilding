@@ -19,19 +19,19 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { href: '#hero', label: t.navHome, id: 'hero' },
-    { href: '#about', label: t.navAbout, id: 'about' },
-    { href: '#services', label: t.navServices, id: 'services' },
-    { href: '#projects', label: t.navProjects, id: 'projects' },
-    { href: '#testimonials', label: t.navBlog, id: 'testimonials' },
-    { href: '#contact', label: t.navContact, id: 'contact' },
+    { href: '/#hero', label: t.navHome, id: 'hero' },
+    { href: '/#about', label: t.navAbout, id: 'about' },
+    { href: '/#services', label: t.navServices, id: 'services' },
+    { href: '/#projects', label: t.navProjects, id: 'projects' },
+    { href: '/#testimonials', label: t.navBlog, id: 'testimonials' },
+    { href: '/#contact', label: t.navContact, id: 'contact' },
   ]
 
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <nav className="nav-container">
         {/* Logo */}
-        <Link href="#hero" className="nav-logo" onClick={() => setMobileOpen(false)}>
+        <Link href="/#hero" className="nav-logo" onClick={() => setMobileOpen(false)}>
           <span className="logo-normal">BaliBagus</span>
           <span className="logo-bold">Building</span>
         </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <a href="#contact" className="btn-cta">
+          <a href="/#contact" className="btn-cta">
             {t.navCta}
           </a>
 

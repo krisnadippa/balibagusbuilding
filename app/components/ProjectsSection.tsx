@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLang } from '@/app/context/LanguageContext'
 
 type FilterKey = 'all' | 'housing' | 'corporate' | 'medical' | 'campus' | 'traditional' | 'civic' | 'factory' | 'iron_jungle'
@@ -14,7 +15,7 @@ const projects = [
   { id: 5, category: 'housing', img: '/images/interior_style.png', nameKey: 'pname5' as const, subKey: 'psub5' as const, classId: 'proj-card-5' },
 ]
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ hideHeader = false }: { hideHeader?: boolean }) {
   const { t } = useLang()
   const [activeFilter, setActiveFilter] = useState<FilterKey>('all')
 
@@ -37,15 +38,20 @@ export default function ProjectsSection() {
   return (
     <section className="projects" id="projects">
       <div className="proj-container">
-        <div className="proj-header">
-          <div className="proj-header-left">
-            <p className="proj-tag">{t.projTag}</p>
-            <h2 className="proj-title">{t.projTitle}</h2>
+        {!hideHeader && (
+          <div className="proj-header" style={{ alignItems: 'flex-end' }}>
+            <div className="proj-header-left">
+              <p className="proj-tag">{t.projTag}</p>
+              <h2 className="proj-title">{t.projTitle}</h2>
+            </div>
+            <div className="proj-header-right" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem' }}>
+              <p className="proj-desc">{t.projDesc}</p>
+              <Link href="/projects" className="btn-outline-dark" style={{ alignSelf: 'flex-start' }}>
+                Lihat Semua
+              </Link>
+            </div>
           </div>
-          <div className="proj-header-right">
-            <p className="proj-desc">{t.projDesc}</p>
-          </div>
-        </div>
+        )}
 
         {/* Filter Tabs */}
         <div className="proj-filters">
@@ -63,7 +69,7 @@ export default function ProjectsSection() {
         {/* Grid */}
         <div className={`proj-grid ${activeFilter !== 'all' ? 'is-filtered' : ''}`}>
           {filtered.map((proj) => (
-            <div key={proj.id} className={`proj-card ${proj.classId}`}>
+            <Link href="/projects" key={proj.id} className={`proj-card ${proj.classId}`} style={{ textDecoration: 'none' }}>
               <div className="proj-card-header-text">
                 <div className="proj-card-titles">
                   <h3 className="proj-card-name">{t[proj.nameKey]}</h3>
@@ -85,7 +91,7 @@ export default function ProjectsSection() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
