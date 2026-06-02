@@ -72,6 +72,11 @@ export const metadata: Metadata = {
     images: ['/images/logob3.jpg'],
     creator: '@balibagusbuilding',
   },
+  icons: {
+    icon: '/images/logob3.jpg',
+    shortcut: '/images/logob3.jpg',
+    apple: '/images/logob3.jpg',
+  },
   verification: {
     google: 'google-site-verification-code', // User can replace this with actual verification code
   },
