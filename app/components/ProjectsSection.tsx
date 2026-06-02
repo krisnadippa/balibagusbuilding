@@ -46,8 +46,24 @@ export default function ProjectsSection({ hideHeader = false }: { hideHeader?: b
             </div>
             <div className="proj-header-right" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1rem' }}>
               <p className="proj-desc">{t.projDesc}</p>
-              <Link href="/projects" className="btn-outline-dark" style={{ alignSelf: 'flex-start' }}>
-                Lihat Semua
+              <Link href="/projects" className="proj-view-all-link" style={{ 
+                alignSelf: 'flex-end',
+                color: 'var(--dark, #1a1a1a)',
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                transition: 'color 0.25s ease, opacity 0.25s ease',
+                paddingBottom: '2px',
+                cursor: 'pointer'
+              }}>
+                <span>{t.viewAll || 'Lihat Semua'}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="proj-view-all-arrow" style={{ transition: 'transform 0.25s ease' }}>
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
               </Link>
             </div>
           </div>

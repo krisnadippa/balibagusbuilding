@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useLang } from '@/app/context/LanguageContext'
 
 export default function Footer() {
@@ -14,10 +15,10 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Column 1 */}
           <div className="footer-col brand-col">
-            <a href="#hero" className="footer-logo">
+            <Link href="/#hero" className="footer-logo">
               <span className="logo-normal">BaliBagus</span>
               <span className="logo-bold">Building</span>
-            </a>
+            </Link>
             <p className="footer-desc">{t.footerDesc}</p>
             <div className="footer-socials">
               <a href="#" className="social-box" aria-label="Facebook">
@@ -47,11 +48,11 @@ export default function Footer() {
           <div className="footer-col">
             <h3 className="footer-col-title">{t.footerNavTitle}</h3>
             <ul className="footer-links">
-              <li><a href="#hero">{t.navHome}</a></li>
-              <li><a href="#about">{t.navAbout}</a></li>
-              <li><a href="#services">{t.navServices}</a></li>
-              <li><a href="#projects">{t.navProjects}</a></li>
-              <li><a href="#testimonials">{t.navBlog}</a></li>
+              <li><Link href="/#hero">{t.navHome}</Link></li>
+              <li><Link href="/#about">{t.navAbout}</Link></li>
+              <li><Link href="/#services">{t.navServices}</Link></li>
+              <li><Link href="/projects">{t.navProjects}</Link></li>
+              <li><Link href="/#testimonials">{t.navBlog}</Link></li>
             </ul>
           </div>
 

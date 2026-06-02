@@ -22,7 +22,7 @@ export default function Navbar() {
     { href: '/#hero', label: t.navHome, id: 'hero' },
     { href: '/#about', label: t.navAbout, id: 'about' },
     { href: '/#services', label: t.navServices, id: 'services' },
-    { href: '/#projects', label: t.navProjects, id: 'projects' },
+    { href: '/projects', label: t.navProjects, id: 'projects' },
     { href: '/#testimonials', label: t.navBlog, id: 'testimonials' },
     { href: '/#contact', label: t.navContact, id: 'contact' },
   ]
@@ -40,7 +40,7 @@ export default function Navbar() {
         <ul className={`nav-links ${mobileOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
             <li key={link.id}>
-              <a
+              <Link
                 href={link.href}
                 className={`nav-link ${activeSection === link.id ? 'active' : ''}`}
                 onClick={() => {
@@ -49,7 +49,7 @@ export default function Navbar() {
                 }}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
