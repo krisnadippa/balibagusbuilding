@@ -15,15 +15,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL
       ? `https://${process.env.NEXT_PUBLIC_SITE_URL}`
+      : process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
-      : 'https://balibagusbuilding.com'
+      : 'https://balibagusbuilding.vercel.app'
   ),
   title: {
     default: 'Bali Bagus Building - Konstruksi & Arsitektur Premium Bali',
     template: '%s | Bali Bagus Building',
   },
-  description: 'Bali Bagus Building membantu mewujudkan properti impian Anda dari visi ke realita. Layanan konstruksi premium, arsitektur, kontraktor bangunan, dan desain interior terbaik di Bali.',
+  description: 'Bali Bagus Building membantu mewujudkan properti impian Anda dari visi ke realita dengan layanan konstruksi premium dan arsitektur terbaik di Bali.',
   keywords: [
     'konstruksi bali',
     'arsitektur bali',
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
     'arsitek premium bali',
     'luxury construction bali',
   ],
-  authors: [{ name: 'Bali Bagus Building', url: 'https://balibagusbuilding.com' }],
+  authors: [{ name: 'Bali Bagus Building', url: 'https://balibagusbuilding.vercel.app' }],
   creator: 'Bali Bagus Building',
   publisher: 'Bali Bagus Building',
   robots: {
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Bali Bagus Building - Konstruksi & Arsitektur Premium Bali',
-    description: 'Dari Visi ke Realita — Dibangun dengan Keahlian dan Tujuan. Kontraktor dan arsitek premium tepercaya di Bali.',
+    description: 'Bali Bagus Building membantu mewujudkan properti impian Anda dari visi ke realita dengan layanan konstruksi premium dan arsitektur terbaik di Bali.',
     url: '/',
     siteName: 'Bali Bagus Building',
     images: [
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Bali Bagus Building - Konstruksi & Arsitektur Premium Bali',
-    description: 'Dari Visi ke Realita — Dibangun dengan Keahlian dan Tujuan. Kontraktor dan arsitek premium tepercaya di Bali.',
+    description: 'Bali Bagus Building membantu mewujudkan properti impian Anda dari visi ke realita dengan layanan konstruksi premium dan arsitektur terbaik di Bali.',
     images: ['/images/logob3.jpg'],
     creator: '@balibagusbuilding',
   },
